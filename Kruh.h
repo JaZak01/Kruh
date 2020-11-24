@@ -9,6 +9,9 @@ private:
     char nazov;
 public:
 // konstruktor, par pol a obsah
+    static Kruh getMax(Kruh pole[], int pocet);
+    static void vymenKruhy(Kruh *prvy, Kruh *druhy);
+    static void vymenKruhy(Kruh &prvy, Kruh &druhy);
     Kruh(float mojPolomer, char mojNazov);
     Kruh ();
     explicit Kruh(float mojPolomer);
@@ -21,10 +24,27 @@ public:
     float getObvod() const;
     float getObsah() const;
     void vypisKruh() const;
-    bool jeVacsi(Kruh otherKruh) const;
-    Kruh spocitaj(Kruh other) const;
+    bool jeVacsi(const Kruh &otherKruh) const;
+    bool jeVacsi(const Kruh *otherKruh) const;
+    bool operator>(const Kruh& inyKruh) const;
+    bool operator<(const Kruh& inyKruh) const;
+    Kruh spocitaj(const Kruh &other) const;
+    Kruh operator+(const Kruh & inyKruh) const;
+    Kruh spocitaj(const Kruh *otherKruh) const;
+    Kruh operator-(const Kruh &inyKruh) const;
     Kruh vydel(float cislo) const;
+    Kruh operator/(float cislo) const;
     Kruh pripocitaj(float cislo) const;
+    Kruh operator*(float cislo) const;
+    const Kruh &operator++();
+    Kruh operator++(int nepotrebna);
+    const Kruh & operator--();
+    Kruh operator--(int nepotrebny);
+    const Kruh & operator+=(float cislo);
+    const Kruh & operator-=(float cislo);
+
+
+
 
 // metoda kruh:: pricitajKruh (kruh otherkruh)  const;
 
