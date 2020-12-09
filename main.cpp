@@ -444,8 +444,6 @@ void Kruh::sortovanie(Kruh pole[], int pocet)
                     spravene = false;
                 }
             }
-
-            // IF no two elements were swapped by inner loop, then break
             if (spravene)
             {
                 break;
